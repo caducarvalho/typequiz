@@ -1,39 +1,36 @@
-import styled from 'styled-components'
 import Widget from '../src/components/Widget';
 import Footer from '../src/components/Footer';
-import GitHubCorner from '../src/components/GitHubCorner';
+import QuizLogo from '../src/components/QuizLogo';
+import QuizContainer from '../src/components/QuizContainer';
 import QuizBackground from '../src/components/QuizBackground';
+import GitHubCorner from '../src/components/GitHubCorner';
 import db from '../db.json';
-
-const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 45px;
-  margin: auto 10%;
-
-  @media screen and (max-width: 499px) {
-    margin: auto;
-    padding: 15px;
-  }
-`;
 
 const Home = () => (
   <QuizBackground>
+    <QuizLogo />
+
     <QuizContainer>
       <Widget>
-        <Widget.Header>
-          <h1>{db.title}</h1>
-        </Widget.Header>
+        <Widget.Header>{db.title}</Widget.Header>
 
         <Widget.Content>
           <p>{db.description}</p>
+
+          <hr/>
+
+          <p>Em breve...</p>
         </Widget.Content>
       </Widget>
       
       <Widget>
         <Widget.Content>
-          <h1>Quizes da galera</h1>
+          <h2>Quizes da galera</h2>
           <p>Veja outros quizes para testar seus conhecimentos em outros assuntos</p>
+
+          <hr/>
+
+          <p>Em breve...</p>
         </Widget.Content>
       </Widget>
       <Footer />

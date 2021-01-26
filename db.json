@@ -31,13 +31,16 @@
   ],
   "theme": {
     "colors": {
-      "primary": "#B486AB",
-      "secondary": "#DE9E36",
-      "mainBg": "#37323E",
-      "contrastText": "#FFFFFF",
-      "wrong": "#F4442E",
-      "success": "#45B69C"
-    },
-    "borderRadius": "4px"
+      "primary": "#5F00BA",
+      "secondary": "#F3A738",
+      "mainBg": "#3D007A",
+      "contBg": "#47008F",
+      "border": "#000000",
+      "altBg": "#FFFFFF",
+      "headBg": "#BBBBBB",
+      "text": "#333333",
+      "wrong": "#FF3A20",
+      "success": "#84DCC6"
+    }
   }
 }

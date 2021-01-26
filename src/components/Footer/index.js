@@ -5,13 +5,17 @@ const FooterWrapper = styled.footer`
   padding: 20px;
   display: flex;
   align-items: center;
-  border-radius: 4px; 
+  margin-top: auto;
+  color: ${({theme}) => theme.colors.altBg};
+  font-size: 0.9rem;
+
   img {
     width: 58px;
     margin-right: 23px;
   }
+
   a {
-    color: white;
+    color: ${({theme}) => theme.colors.altBg};
     text-decoration: none;
     transition: .3s;
     &:hover,
