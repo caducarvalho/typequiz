@@ -36,7 +36,7 @@ const Home = () => (
       <Footer />
     </QuizContainer>
 
-    <GitHubCorner />
+    <GitHubCorner projectUrl="https://github.com/caducarvalho/typequiz" />
   </QuizBackground>
 );
 
