@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 const Widget = styled.div`
   margin: 10px auto 0;
-  border-bottom: 1px solid ${({theme}) => theme.colors.border};
-  background-color: ${({theme}) => theme.colors.altBg};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+  background-color: ${({ theme }) => theme.colors.altBg};
   overflow: hidden;
+  width: 100%;
 
   h2, h3 {
     font-size: 1rem;
@@ -21,7 +22,7 @@ const Widget = styled.div`
 
   hr {
     border: none;
-    border-top: 1px solid ${({theme}) => theme.colors.border};
+    border-top: 1px solid ${({ theme }) => theme.colors.border};
     height: 0;
     margin: 20px 0;
   }
@@ -29,11 +30,13 @@ const Widget = styled.div`
 
 Widget.Header = styled.h1`
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
   padding: 18px 32px;
-  background: ${({theme}) => theme.colors.secondary};
-  border-bottom: 1px solid ${({theme}) => theme.colors.border};
+  background: ${({ theme }) => theme.colors.secondary};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
   margin: 0;
 `;
 

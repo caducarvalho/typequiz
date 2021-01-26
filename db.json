@@ -37,6 +37,7 @@
       "contBg": "#47008F",
       "border": "#000000",
       "altBg": "#FFFFFF",
+      "dimmed": "#EFDDFE",
       "headBg": "#BBBBBB",
       "text": "#333333",
       "wrong": "#FF3A20",
@@ -44,3 +45,4 @@
     }
   }
 }
+

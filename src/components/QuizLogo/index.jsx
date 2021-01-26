@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
@@ -33,27 +34,28 @@ const BoxLogo = styled(Logo)`
   margin: 0;
   padding: 10px;
   display: block;
-  background: ${({theme}) => theme.colors.primary};
-  border-right: 1px solid ${({theme}) => theme.colors.border};
+  background: ${({ theme }) => theme.colors.primary};
+  border-right: 1px solid ${({ theme }) => theme.colors.border};
   transition: background-color 0.2s ease-in-out;
 
   &:hover {
-    background: ${({theme}) => theme.colors.secondary};
+    background: ${({ theme }) => theme.colors.secondary};
   }
 `;
 
 const HeaderLogo = styled.header`
-  border: 1px solid ${({theme}) => theme.colors.border};
-  background: ${({theme}) => theme.colors.headBg};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  background: ${({ theme }) => theme.colors.headBg};
   padding: 0;
   margin: 0;
   flex: 0 0 auto;
+  width: 100%;
 `;
 
 const QuizLogo = () => (
   <HeaderLogo>
     <BoxLogo />
   </HeaderLogo>
-)
+);
 
 export default QuizLogo;
