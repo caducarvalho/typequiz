@@ -1,53 +1,84 @@
-import React, { useContext, useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useRouter } from 'next/router';
-import Input from '../src/components/Input';
-// import Button from '../src/components/Button'
-import Widget from '../src/components/Widget';
 import Footer from '../src/components/Footer';
+import Loading from '../src/components/Loading';
 import QuizLogo from '../src/components/QuizLogo';
 import QuizContainer from '../src/components/QuizContainer';
 import QuizBackground from '../src/components/QuizBackground';
 import GitHubCorner from '../src/components/GitHubCorner';
+import Question from '../src/components/Question';
+import Result from '../src/components/Result';
 import FormContext from '../src/contexts/FormContext';
 import db from '../db.json';
 
 const QuizPage = () => {
-  const { query } = useRouter();
-  const { name } = useContext(FormContext);
-  const [answer, handleAnswer] = useState('');
+  const router = useRouter();
+  const { resetScore, resetQuiz } = useContext(FormContext);
+  const [screenState, handleScreenState] = useState('loading');
+  const [questionIndex, handleQuestionIndex] = useState(0);
+  const [choice, handleChoice] = useState(9);
+  const totalQuestions = db.questions.length;
+  const question = db.questions[questionIndex];
+
+  useEffect(() => {
+    if (screenState === 'loading') setTimeout(() => handleScreenState('quiz'), [2000]);
+  }, [screenState]);
+
+  const moveQuiz = () => {
+    if (questionIndex + 1 < totalQuestions) {
+      handleChoice(9);
+      handleQuestionIndex(questionIndex + 1);
+    } else {
+      handleScreenState('result');
+    }
+  };
+
+  const returnToStart = () => {
+    resetScore();
+    handleChoice(9);
+    handleQuestionIndex(0);
+    handleScreenState('loading');
+  };
+
+  const returnToZero = () => {
+    router.push('/');
+    resetQuiz();
+  };
 
   return (
     <QuizBackground>
       <QuizLogo />
 
-      <QuizContainer>
-        <Widget>
-          <Widget.Header>{db.title}</Widget.Header>
+      {screenState === 'loading' && <Loading />}
 
-          <Widget.Content>
-            <p>
-              Olá,
-              {' '}
-              {name}
-              . Não tem nada aqui por enquanto, mas divirta-se com esse input logo abaixo.
-              {' '}
-              Aliás, seu nome é
-              {' '}
-              {query.name}
-              {' '}
-              mesmo, né? ;)
-            </p>
+      {screenState === 'quiz' && (
+        <QuizContainer>
+          <Question
+            questions={totalQuestions}
+            question={questionIndex}
+            moveQuiz={moveQuiz}
+            title={question.title}
+            description={question.description}
+            image={question.image}
+            image2x={question.image2x}
+            choice={choice}
+            handleChoice={handleChoice}
+            alternatives={question.alternatives}
+            answer={question.answer}
+          />
+          <Footer />
+        </QuizContainer>
+      )}
 
-            <Input
-              value={answer}
-              onChange={({ target }) => handleAnswer(target.value)}
-              placeholder="Por enquanto não tem nada aqui mesmo"
-            />
-          </Widget.Content>
-        </Widget>
-
-        <Footer />
-      </QuizContainer>
+      {screenState === 'result' && (
+        <QuizContainer>
+          <Result
+            returnToStart={returnToStart}
+            resetQuiz={returnToZero}
+          />
+          <Footer />
+        </QuizContainer>
+      )}
 
       <GitHubCorner projectUrl="https://github.com/caducarvalho/typequiz" />
     </QuizBackground>

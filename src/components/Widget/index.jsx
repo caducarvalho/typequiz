@@ -14,17 +14,16 @@ const Widget = styled.div`
     margin-bottom: 0;
   }
 
-  p {
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.2rem;
-  }
-
   hr {
     border: none;
     border-top: 1px solid ${({ theme }) => theme.colors.border};
     height: 0;
     margin: 20px 0;
+  }
+
+  img {
+    display: block;
+    width: 100%;
   }
 `;
 
@@ -52,6 +51,43 @@ Widget.Content = styled.div`
   ul {
     list-style: none;
     padding: 0;
+  }
+`;
+
+Widget.Alternatives = styled.ul`
+  display: grid;
+  grid-template: auto / repeat(2, 1fr);
+  grid-gap: 20px;
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+`;
+
+Widget.Progress = styled.p`
+  margin: 20px 0;
+  padding: 0;
+  font-size: 0.85rem;
+  text-align: center;
+  color: ${({ theme }) => theme.colors.primary};
+`;
+
+Widget.Description = styled.p`
+  margin: 20px 0;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.4rem;
+`;
+
+Widget.Links = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  li {
+    margin-top: 20px;
   }
 `;
 

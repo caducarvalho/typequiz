@@ -2,30 +2,6 @@
   "bg": "https://i2.wp.com/css-tricks.com/wp-content/uploads/2017/06/css-is-awesome-scaled.jpg?resize=1536%2C1208&ssl=1",
   "title": "Type Quiz",
   "description": "Você sabe tudo de tipografia? Teste seus conhecimentos sobre o universo dos desenhos das letras.",
-  "questions": [
-    {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
-      "description": "Essa é pra aquecer",
-      "answer": 2,
-      "alternatives": [
-        ".elemento",
-        "*elemento",
-        "#elemento",
-        "%elemento"
-      ]
-    },
-    {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
-      "answer": 0,
-      "alternatives": [
-         "background: linear-gradient(#e66465, #9198e5);",
-         "background: gradient(#e66465, #9198e5);"
-      ]
-    }
-  ],
   "external": [
     ""
   ],
@@ -43,6 +19,202 @@
       "wrong": "#FF3A20",
       "success": "#84DCC6"
     }
-  }
+  },
+  "questions": [
+    {
+      "image": "./questoes/questao-01.png",
+      "image2x": "./questoes/questao-01@2x.png",
+      "title": "Questão 1",
+      "description": "O conjunto de fontes que seguem um certo desenho, mas variam o peso, largura ou estilo entre si, é chamado de:",
+      "answer": 1,
+      "alternatives": [
+        "Tipologia",
+        "Família tipográfica",
+        "Caixa de estilos",
+        "Unidade tipográfica"
+      ]
+    },
+    {
+      "image": "./questoes/questao-02.png",
+      "image2x": "./questoes/questao-02@2x.png",
+      "title": "Questão 2",
+      "description": "Os traços horizontais presentes nas terminações das hastes de algumas letras é chamado de:",
+      "answer": 3,
+      "alternatives": [
+         "Traço",
+         "Barra",
+         "Terminal",
+         "Serifa"
+      ]
+    },
+    {
+      "image": "./questoes/questao-03.png",
+      "image2x": "./questoes/questao-03@2x.png",
+      "title": "Questão 3",
+      "description": "A fonte Courier é muito utilizada entre profissionais de tecnologia desde os anos 1950. Como a Courier pode ser classificada em relação à diferença de largura entre seus caracteres?",
+      "answer": 2,
+      "alternatives": [
+         "Condensada",
+         "Oblíqua",
+         "Monoespaçada",
+         "Variável"
+      ]
+    },
+    {
+      "image": "./questoes/questao-04.png",
+      "image2x": "./questoes/questao-04@2x.png",
+      "title": "Questão 4",
+      "description": "Ao desenhar uma fonte, o designer pode utilizar um recurso específico para corrigir espaçamentos irregulares entre pares específicos de letras, como “AV”, “PA” e “LV”. Qual é o nome desse recurso?",
+      "answer": 2,
+      "alternatives": [
+         "Barramento",
+         "Espaçamento",
+         "Kerning",
+         "Pareamento"
+      ]
+    },
+    {
+      "image": "./questoes/questao-05.png",
+      "image2x": "./questoes/questao-05@2x.png",
+      "title": "Questão 5",
+      "description": "A sentença “E o vento levou…” possui quantos caracteres? (sem contar aspas)",
+      "answer": 0,
+      "alternatives": [
+         "16",
+         "13",
+         "15",
+         "18"
+      ]
+    },
+    {
+      "image": "./questoes/questao-06.png",
+      "image2x": "./questoes/questao-06@2x.png",
+      "title": "Questão 6",
+      "description": "Em geral, o desenho das letras tem diferenças na largura de alguns traços. Em alguns momentos, os traços são mais finos; em outros pontos, o traço alcança sua largura máxima. Essa diferença de largura é chamada de:",
+      "answer": 0,
+      "alternatives": [
+         "Contraste",
+         "Compensação",
+         "Regularidade",
+         "Bézier"
+      ]
+    },
+    {
+      "image": "./questoes/questao-07.png",
+      "image2x": "./questoes/questao-07@2x.png",
+      "title": "Questão 7",
+      "description": "A Comic Sans é uma família de fontes criada em 1995 e introduzida no pacote de fontes do Microsoft Windows em 1998. Em qual destes aplicativos ela era usada como fonte padrão?",
+      "answer": 1,
+      "alternatives": [
+         "Windows Live Messenger",
+         "The Sims",
+         "Microsoft Word",
+         "Microsoft Bob"
+      ]
+    },
+    {
+      "image": "./questoes/questao-08.png",
+      "image2x": "./questoes/questao-08@2x.png",
+      "title": "Questão 8",
+      "description": "Qual destes formatos de fonte foi criado especificamente para facilitar o uso de fontes não-seguras em diversos navegadores?",
+      "answer": 2,
+      "alternatives": [
+         "TrueType",
+         "OpenType",
+         "WOFF",
+         "AFB"
+      ]
+    },
+    {
+      "image": "./questoes/questao-09.png",
+      "image2x": "./questoes/questao-09@2x.png",
+      "title": "Questão 9",
+      "description": "Uma grande tecnologia lançada recentemente permite que um único arquivo de fonte contenha em si todos os estilos e pesos, facilitando seu uso em aplicativos e páginas de internet. Esta tecnologia é chamada de:",
+      "answer": 3,
+      "alternatives": [
+         "Fontes paramétricas",
+         "Compactação TrueType",
+         "Curvas programáveis",
+         "Fontes variáveis"
+      ]
+    },
+    {
+      "image": "./questoes/questao-10.png",
+      "image2x": "./questoes/questao-10@2x.png",
+      "title": "Questão 10",
+      "description": "Algumas fontes têm desenhos específicos para encontros de letras como “ff”, “fi” e “fl”. Esse recurso de desenhar letras unidas é chamado de:",
+      "answer": 1,
+      "alternatives": [
+         "Versalete",
+         "Ligadura",
+         "Unidade",
+         "Combinação"
+      ]
+    },
+    {
+      "image": "./questoes/questao-11.png",
+      "image2x": "./questoes/questao-11@2x.png",
+      "title": "Questão 11",
+      "description": "Embora não exista consenso científico sobre a relação entre legibilidade e o uso de serifas, fontes sem serifa costumam ser indicadas para leitura de textos curtos. Qual destas fontes pode ser classificada como uma fonte sem serifa?",
+      "answer": 3,
+      "alternatives": [
+         "Georgia",
+         "Times New Roman",
+         "Caslon",
+         "Arial"
+      ]
+    },
+    {
+      "image": "./questoes/questao-12.png",
+      "image2x": "./questoes/questao-12@2x.png",
+      "title": "Questão 12",
+      "description": "Em algumas fontes, os caracteres de números têm larguras iguais entre si. Esses números são chamados de:",
+      "answer": 1,
+      "alternatives": [
+         "Proporcionais",
+         "Tabulares",
+         "Old-style",
+         "Colineares"
+      ]
+    },
+    {
+      "image": "./questoes/questao-13.png",
+      "image2x": "./questoes/questao-13@2x.png",
+      "title": "Questão 13",
+      "description": "Algumas fontes presentes por padrão nos sistemas operacionais, como a Georgia, Trebuchet, Verdana e Arial, têm um recurso feito para otimizar sua legibilidade em telas de baixa resolução. Esse recurso é chamado de:",
+      "answer": 0,
+      "alternatives": [
+         "Hinting",
+         "Crenagem",
+         "Subpixel",
+         "Interpolação"
+      ]
+    },
+    {
+      "image": "./questoes/questao-14.png",
+      "image2x": "./questoes/questao-14@2x.png",
+      "title": "Questão 14",
+      "description": "É comum, no desenho de fontes, que as letras maiúsculas sejam um pouco menores que as letras minúsculas com traços ascendentes, como a letra “l”. Qual é o nome técnico da altura das letras maiúsculas?",
+      "answer": 1,
+      "alternatives": [
+         "Linha de base",
+         "Altura de caixa alta",
+         "Corpo de texto",
+         "Altura de ascendente"
+      ]
+    },
+    {
+      "image": "./questoes/questao-15.png",
+      "image2x": "./questoes/questao-15@2x.png",
+      "title": "Questão 15",
+      "description": "Para que possam ser utilizadas em diversas línguas, as fontes precisam conter caracteres acentuados, como “á”, “õ” e “ç”. Como é o nome destes sinais utilizados junto com as letras?",
+      "answer": 2,
+      "alternatives": [
+         "Acentos",
+         "Diferenciais",
+         "Diacríticos",
+         "Supratonais"
+      ]
+    }
+  ]
 }
-

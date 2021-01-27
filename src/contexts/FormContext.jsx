@@ -4,6 +4,7 @@ import FormReducer from '../reducers/FormReducer';
 
 const initialValue = {
   name: '',
+  score: 0,
 };
 
 const FormContext = createContext();
@@ -13,10 +14,23 @@ const FormProvider = ({ children }) => {
 
   const handleName = (name) => dispatch({ type: 'CHANGE_NAME', name });
 
-  const { name } = state;
+  const resetScore = () => dispatch({ type: 'RESET_SCORE' });
+  const incrementScore = () => dispatch({ type: 'INCREMENT_SCORE' });
+
+  const resetQuiz = () => dispatch({ type: 'RESET_QUIZ', info: initialValue });
+
+  const { name, score } = state;
 
   return (
-    <FormContext.Provider value={{ name, handleName }}>
+    <FormContext.Provider value={{
+      name,
+      score,
+      handleName,
+      resetScore,
+      incrementScore,
+      resetQuiz,
+    }}
+    >
       {children}
     </FormContext.Provider>
   );
