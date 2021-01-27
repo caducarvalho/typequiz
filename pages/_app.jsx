@@ -37,6 +37,21 @@ const App = ({ Component, pageProps }) => (
   <ThemeProvider theme={db.theme}>
     <Head>
       <title>Type Quiz</title>
+      <meta name="title" content="Type Quiz" />
+      <meta name="description" content="Um quiz sobre tipografia desenvolvido na Imersão React da Alura. Você acha que sabe sobre tipografia? Que tal testar seus conhecimentos sobre letras, fontes e o universo dos tipos?" />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://typequiz.caducarvalho.vercel.app/" />
+      <meta property="og:title" content="Type Quiz" />
+      <meta property="og:description" content="Um quiz sobre tipografia desenvolvido na Imersão React da Alura. Você acha que sabe sobre tipografia? Que tal testar seus conhecimentos sobre letras, fontes e o universo dos tipos?" />
+      <meta property="og:image" content="./card.png" />
+
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content="https://typequiz.caducarvalho.vercel.app/" />
+      <meta property="twitter:title" content="Type Quiz" />
+      <meta property="twitter:description" content="Um quiz sobre tipografia desenvolvido na Imersão React da Alura. Você acha que sabe sobre tipografia? Que tal testar seus conhecimentos sobre letras, fontes e o universo dos tipos?" />
+      <meta property="twitter:image" content="./card.png" />
+
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
