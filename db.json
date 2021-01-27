@@ -38,13 +38,13 @@
       "image": "./questoes/questao-02.png",
       "image2x": "./questoes/questao-02@2x.png",
       "title": "Questão 2",
-      "description": "Os traços horizontais presentes nas terminações das hastes de algumas letras é chamado de:",
+      "description": "Os traços horizontais presentes nas terminações das hastes de algumas letras são chamados de:",
       "answer": 3,
       "alternatives": [
-         "Traço",
-         "Barra",
-         "Terminal",
-         "Serifa"
+         "Traços",
+         "Barras",
+         "Terminais",
+         "Serifas"
       ]
     },
     {
