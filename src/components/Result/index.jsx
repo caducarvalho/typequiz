@@ -45,7 +45,7 @@ const Result = ({
 
       <Widget.Content>
         <p>
-          {name}
+          {name || 'Jogador'}
           , você acertou
           {' '}
           {score === 1 ? 'uma questão' : `${score} questões`}

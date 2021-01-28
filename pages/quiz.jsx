@@ -16,7 +16,7 @@ const QuizPage = () => {
   const { resetScore, resetQuiz } = useContext(FormContext);
   const [screenState, handleScreenState] = useState('loading');
   const [questionIndex, handleQuestionIndex] = useState(0);
-  const [choice, handleChoice] = useState(9);
+  const [choice, handleChoice] = useState(undefined);
   const totalQuestions = db.questions.length;
   const question = db.questions[questionIndex];
 
@@ -26,7 +26,7 @@ const QuizPage = () => {
 
   const moveQuiz = () => {
     if (questionIndex + 1 < totalQuestions) {
-      handleChoice(9);
+      handleChoice(undefined);
       handleQuestionIndex(questionIndex + 1);
     } else {
       handleScreenState('result');
@@ -35,7 +35,7 @@ const QuizPage = () => {
 
   const returnToStart = () => {
     resetScore();
-    handleChoice(9);
+    handleChoice(undefined);
     handleQuestionIndex(0);
     handleScreenState('loading');
   };

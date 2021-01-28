@@ -1,4 +1,5 @@
 import React, { createContext, useReducer } from 'react';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import FormReducer from '../reducers/FormReducer';
 
@@ -10,7 +11,10 @@ const initialValue = {
 const FormContext = createContext();
 
 const FormProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(FormReducer, initialValue);
+  const { query, path } = useRouter();
+  const [state, dispatch] = useReducer(FormReducer, initialValue, () => (
+    { name: query.name || (path === '/quiz' ? 'Jogador' : ''), score: 0 }
+  ));
 
   const handleName = (name) => dispatch({ type: 'CHANGE_NAME', name });
 
