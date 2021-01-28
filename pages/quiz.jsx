@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import Footer from '../src/components/Footer';
 import Loading from '../src/components/Loading';
@@ -11,14 +12,14 @@ import Result from '../src/components/Result';
 import FormContext from '../src/contexts/FormContext';
 import db from '../db.json';
 
-const QuizPage = () => {
+const QuizPage = ({ questions }) => {
   const router = useRouter();
   const { resetScore, resetQuiz } = useContext(FormContext);
   const [screenState, handleScreenState] = useState('loading');
   const [questionIndex, handleQuestionIndex] = useState(0);
   const [choice, handleChoice] = useState(undefined);
-  const totalQuestions = db.questions.length;
-  const question = db.questions[questionIndex];
+  const totalQuestions = questions.length;
+  const question = questions[questionIndex];
 
   useEffect(() => {
     if (screenState === 'loading') setTimeout(() => handleScreenState('quiz'), [2000]);
@@ -84,5 +85,15 @@ const QuizPage = () => {
     </QuizBackground>
   );
 };
+
+QuizPage.propTypes = {
+  questions: PropTypes.arrayOf(PropTypes.shape).isRequired,
+};
+
+export async function getStaticProps() {
+  const questions = await db;
+
+  return { props: { questions: questions.questions } };
+}
 
 export default QuizPage;
