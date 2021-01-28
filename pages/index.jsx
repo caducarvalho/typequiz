@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import Input from '../src/components/Input';
 import Button from '../src/components/Button';
@@ -12,7 +13,7 @@ import GitHubCorner from '../src/components/GitHubCorner';
 import FormContext from '../src/contexts/FormContext';
 import db from '../db.json';
 
-const Home = () => {
+const Home = ({ projs }) => {
   const router = useRouter();
   const { name, handleName } = useContext(FormContext);
 
@@ -47,7 +48,7 @@ const Home = () => {
           </Widget.Content>
         </Widget>
 
-        <Projects />
+        <Projects projs={projs} />
         <Footer />
       </QuizContainer>
 
@@ -55,5 +56,26 @@ const Home = () => {
     </QuizBackground>
   );
 };
+
+Home.defaultProps = {
+  projs: {},
+};
+
+Home.propTypes = {
+  projs: PropTypes.objectOf(PropTypes.shape),
+};
+
+export async function getStaticProps() {
+  const projsInitial = await fetch('https://api.github.com/search/repositories?q=topic:aluraquiz&sort=updated&per_page=5', {
+    method: 'GET',
+    headers: {
+      Accept: 'application/vnd.github.v3+json',
+    },
+  });
+
+  const projs = await projsInitial.json();
+
+  return { props: { projs } };
+}
 
 export default Home;
