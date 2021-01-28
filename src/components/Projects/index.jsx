@@ -47,7 +47,9 @@ const Projects = () => {
               {(projects !== null && projects.items.length > 0)
                 ? (projects.items.map((p) => (
                   <li key={p.id}>
-                    <Widget.Link href={p.url} target="_blank" rel="noopener noreferrer">
+                    <Widget.Link href={p.homepage} target="_blank" rel="noopener noreferrer">
+                      <strong>{p.owner.login}</strong>
+                      {' – '}
                       {p.name}
                     </Widget.Link>
                   </li>

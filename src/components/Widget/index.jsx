@@ -106,6 +106,9 @@ Widget.Link = styled.a`
   transform: translate(0, 0);
   transition: all 0.25s ease-in-out;
   position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   cursor: pointer;
 
   &:hover {
