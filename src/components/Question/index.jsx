@@ -16,7 +16,7 @@ const Question = ({
   moveQuiz,
   answer,
 }) => {
-  const { incrementScore } = useContext(FormContext);
+  const { score, incrementScore } = useContext(FormContext);
   const [choice, handleChoice] = useState(9);
   const [reveal, toggleReveal] = useState(false);
 
@@ -30,7 +30,7 @@ const Question = ({
       handleChoice(9);
       toggleReveal(false);
       moveQuiz();
-    }, 1000);
+    }, 2000);
   };
 
   return (
@@ -43,7 +43,14 @@ const Question = ({
           src={image}
           alt={title}
         />
-        <Widget.Progress>{`${question + 1} / ${questions}`}</Widget.Progress>
+        <Widget.Progress>
+          {`${question + 1} / ${questions}`}
+          {' '}
+          —
+          {' '}
+          <strong>{score === 1 ? '1 ponto' : `${score} pontos`}</strong>
+        </Widget.Progress>
+
         <Widget.Description>{description}</Widget.Description>
 
         <Widget.Alternatives>

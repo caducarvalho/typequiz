@@ -4,6 +4,7 @@ import Input from '../src/components/Input';
 import Button from '../src/components/Button';
 import Widget from '../src/components/Widget';
 import Footer from '../src/components/Footer';
+import Projects from '../src/components/Projects';
 import QuizLogo from '../src/components/QuizLogo';
 import QuizContainer from '../src/components/QuizContainer';
 import QuizBackground from '../src/components/QuizBackground';
@@ -46,16 +47,7 @@ const Home = () => {
           </Widget.Content>
         </Widget>
 
-        <Widget>
-          <Widget.Content>
-            <h2>Quizes da galera</h2>
-            <p>Veja outros quizes para testar seus conhecimentos em outros assuntos</p>
-
-            <hr />
-
-            <p>Em breve...</p>
-          </Widget.Content>
-        </Widget>
+        <Projects />
         <Footer />
       </QuizContainer>
 

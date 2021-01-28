@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Widget = styled.div`
-  margin: 10px auto 0;
+  margin: 20px auto 0;
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
   background-color: ${({ theme }) => theme.colors.altBg};
   overflow: hidden;
@@ -88,6 +88,36 @@ Widget.Links = styled.ul`
 
   li {
     margin-top: 20px;
+  }
+`;
+
+Widget.Link = styled.a`
+  display: block;
+  border-radius: 0;
+  padding: 8px;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  background: ${({ theme }) => theme.colors.altBg};
+  color: ${({ theme }) => theme.colors.text};
+  text-decoration: none;
+  width: 100%;
+  font-family: "Work Sans";
+  font-size: 0.9rem;
+  box-shadow: 0 0 0 rgba(0,0,0,0.2);
+  transform: translate(0, 0);
+  transition: all 0.25s ease-in-out;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.dimmed};
+    transform: translate(-5px, -5px);
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.2);
+  }
+
+  &:active {
+    background: ${({ theme }) => theme.colors.dimmed};
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
   }
 `;
 

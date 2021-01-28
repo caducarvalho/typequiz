@@ -13,15 +13,15 @@ const Result = ({
   const getMessage = (r) => {
     let rate = 0;
 
-    if (r > 14) {
+    if (r > 13) {
       rate = 5;
-    } else if (r > 11) {
+    } else if (r > 10) {
       rate = 4;
-    } else if (r > 8) {
+    } else if (r > 7) {
       rate = 3;
-    } else if (r > 5) {
+    } else if (r > 4) {
       rate = 2;
-    } else if (r > 2) {
+    } else if (r > 1) {
       rate = 1;
     }
 

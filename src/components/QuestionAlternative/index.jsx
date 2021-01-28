@@ -21,12 +21,26 @@ const Alternative = styled.label`
         result = theme.colors.secondary;
       }
     } else {
-      result = theme.colors.altBg;
+      result = (reveal && check) ? theme.colors.success : theme.colors.altBg;
     }
 
     return result;
   }};
-  color: ${({ active, theme }) => (active ? theme.colors.altBg : theme.colors.text)};
+  color: ${({
+    active,
+    theme,
+    reveal,
+    check,
+  }) => {
+    let result = null;
+    if (active) {
+      result = theme.colors.altBg;
+    } else {
+      result = (reveal && check) ? theme.colors.altBg : theme.colors.text;
+    }
+
+    return result;
+  }};
   width: 100%;
   font-family: "Work Sans";
   font-size: 0.9rem;
@@ -55,7 +69,6 @@ const Alternative = styled.label`
     margin: 0;
     padding: 0;
     position: absolute;
-
   }
 `;
 
