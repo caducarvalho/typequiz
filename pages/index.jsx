@@ -39,7 +39,9 @@ const Home = ({ projs }) => {
         animate="show"
       >
         <Widget>
-          <Widget.Header>{db.title}</Widget.Header>
+          <Widget.HeaderImage>
+            <img src="/card.png" alt={db.title} />
+          </Widget.HeaderImage>
 
           <Widget.Content>
             <p>{db.description}</p>
@@ -58,7 +60,7 @@ const Home = ({ projs }) => {
           </Widget.Content>
         </Widget>
 
-        <Projects projs={projs}/>
+        <Projects projs={projs} />
         <Footer />
       </QuizContainer>
 

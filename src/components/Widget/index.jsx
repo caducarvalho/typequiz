@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const Widget = styled.div`
-  margin: 20px auto 0;
+  margin: 0 auto 20px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
   background-color: ${({ theme }) => theme.colors.altBg};
   overflow: hidden;
@@ -37,6 +37,18 @@ Widget.Header = styled.h1`
   background: ${({ theme }) => theme.colors.secondary};
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
   margin: 0;
+`;
+
+Widget.HeaderImage = styled.h1`
+  background: ${({ theme }) => theme.colors.secondary};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+  padding: 0;
+  margin: 0;
+
+  img {
+    display: block;
+    width: 100%;
+  }
 `;
 
 Widget.Content = styled.div`
