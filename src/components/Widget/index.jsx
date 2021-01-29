@@ -1,4 +1,3 @@
-import NextLink from 'next/link';
 import styled, { css } from 'styled-components';
 
 const Widget = styled.div`
@@ -55,6 +54,18 @@ Widget.Content = styled.div`
   }
 `;
 
+Widget.Image = styled.div`
+  position: relative;
+
+  .animation {
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+`;
+
 Widget.Alternatives = styled.ul`
   display: grid;
   grid-template: auto / repeat(2, 1fr);
@@ -92,7 +103,7 @@ Widget.Links = styled.ul`
   }
 `;
 
-const LinkStyle = css`
+Widget.Link = styled.a`
   display: block;
   border-radius: 0;
   padding: 8px;
@@ -124,9 +135,5 @@ const LinkStyle = css`
     box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
   }
 `;
-
-Widget.Link = styled.a`${LinkStyle}`;
-
-// Widget.NextLink = styled(NextLink)`${LinkStyle}`;
 
 export default Widget;

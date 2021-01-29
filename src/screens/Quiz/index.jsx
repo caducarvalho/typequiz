@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 import Footer from '../../components/Footer';
 import Loading from '../../components/Loading';
 import QuizLogo from '../../components/QuizLogo';
@@ -52,7 +53,16 @@ const QuizPage = ({ questions }) => {
       {screenState === 'loading' && <Loading />}
 
       {screenState === 'quiz' && (
-        <QuizContainer>
+        <QuizContainer
+          as={motion.section}
+          transition={{ duration: 0.5 }}
+          variants={{
+            show: { opacity: 1 },
+            hidden: { opacity: 0 },
+          }}
+          initial="hidden"
+          animate="show"
+        >
           <Question
             questions={totalQuestions}
             question={questionIndex}

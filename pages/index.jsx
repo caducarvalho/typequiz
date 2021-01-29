@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 import Input from '../src/components/Input';
 import Button from '../src/components/Button';
 import Widget from '../src/components/Widget';
@@ -27,7 +28,16 @@ const Home = ({ projs }) => {
     <QuizBackground>
       <QuizLogo />
 
-      <QuizContainer>
+      <QuizContainer
+        as={motion.section}
+        transition={{ duration: 0.5 }}
+        variants={{
+          show: { opacity: 1 },
+          hidden: { opacity: 0 },
+        }}
+        initial="hidden"
+        animate="show"
+      >
         <Widget>
           <Widget.Header>{db.title}</Widget.Header>
 
@@ -48,7 +58,7 @@ const Home = ({ projs }) => {
           </Widget.Content>
         </Widget>
 
-        <Projects projs={projs} />
+        <Projects projs={projs}/>
         <Footer />
       </QuizContainer>
 

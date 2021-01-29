@@ -1,9 +1,12 @@
 import React, { useState, useContext } from 'react';
+import Lottie from 'react-lottie';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 import Widget from '../Widget';
 import QuestionAlternative from '../QuestionAlternative';
 import FormContext from '../../contexts/FormContext';
+import checkAnimation from '../../animations/check.json';
+import errorAnimation from '../../animations/error.json';
 
 const Question = ({
   questions,
@@ -38,11 +41,30 @@ const Question = ({
       <Widget.Header>{title}</Widget.Header>
 
       <Widget.Content as="form" onSubmit={handleSubmit}>
-        <img
-          srcSet={image2x ? `${image}, ${image2x} 2x` : image}
-          src={image}
-          alt={title}
-        />
+
+        <Widget.Image>
+          {reveal && (
+            <div className="animation">
+              <Lottie
+                options={{
+                  loop: false,
+                  autoplay: true,
+                  animationData:
+                    (parseInt(choice, 10) === answer ? checkAnimation : errorAnimation),
+                  rendererSettings: {
+                    preserveAspectRatio: 'xMidYMid meet',
+                  },
+                }}
+              />
+            </div>
+          )}
+
+          <img
+            srcSet={image2x ? `${image}, ${image2x} 2x` : image}
+            src={image}
+            alt={title}
+          />
+        </Widget.Image>
         <Widget.Progress>
           {`${question + 1} / ${questions}`}
           {' '}
