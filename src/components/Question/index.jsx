@@ -39,7 +39,7 @@ const Question = ({
 
       <Widget.Content as="form" onSubmit={handleSubmit}>
         <img
-          srcSet={`${image}, ${image2x} 2x`}
+          srcSet={image2x ? `${image}, ${image2x} 2x` : image}
           src={image}
           alt={title}
         />

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Widget from '../Widget';
+import Link from '../Link';
 import Loading from '../Loading';
 
 const Projects = ({ projs }) => (
@@ -16,11 +17,11 @@ const Projects = ({ projs }) => (
             {(projs.items && projs.items.length > 0)
               ? (projs.items.map((p) => (
                 <li key={p.id}>
-                  <Widget.Link href={p.homepage} target="_blank" rel="noopener noreferrer">
+                  <Link href={`/quiz/${p.name}___${p.owner.login}`}>
                     <strong>{p.owner.login}</strong>
                     {' – '}
                     {p.name}
-                  </Widget.Link>
+                  </Link>
                 </li>
               )))
               : <li>Projetos não encontrados</li>}

@@ -1,16 +1,15 @@
 import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
-import Footer from '../src/components/Footer';
-import Loading from '../src/components/Loading';
-import QuizLogo from '../src/components/QuizLogo';
-import QuizContainer from '../src/components/QuizContainer';
-import QuizBackground from '../src/components/QuizBackground';
-import GitHubCorner from '../src/components/GitHubCorner';
-import Question from '../src/components/Question';
-import Result from '../src/components/Result';
-import FormContext from '../src/contexts/FormContext';
-import db from '../db.json';
+import Footer from '../../components/Footer';
+import Loading from '../../components/Loading';
+import QuizLogo from '../../components/QuizLogo';
+import QuizContainer from '../../components/QuizContainer';
+import QuizBackground from '../../components/QuizBackground';
+import GitHubCorner from '../../components/GitHubCorner';
+import Question from '../../components/Question';
+import Result from '../../components/Result';
+import FormContext from '../../contexts/FormContext';
 
 const QuizPage = ({ questions }) => {
   const router = useRouter();
@@ -89,11 +88,5 @@ const QuizPage = ({ questions }) => {
 QuizPage.propTypes = {
   questions: PropTypes.arrayOf(PropTypes.shape).isRequired,
 };
-
-export async function getStaticProps() {
-  const questions = await db;
-
-  return { props: { questions: questions.questions } };
-}
 
 export default QuizPage;

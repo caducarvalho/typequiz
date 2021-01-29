@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 import Widget from '../Widget';
@@ -9,8 +10,9 @@ const Result = ({
   resetQuiz,
 }) => {
   const { name, score } = useContext(FormContext);
+  const { pathname } = useRouter();
 
-  const getMessage = (r) => {
+  const getTypeMessage = (r) => {
     let rate = 0;
 
     if (r > 13) {
@@ -51,7 +53,7 @@ const Result = ({
           {score === 1 ? 'uma questão' : `${score} questões`}
           .
           {' '}
-          {getMessage(score)}
+          {pathname !== '/quiz/[id]' && getTypeMessage(score)}
         </p>
 
         <Widget.Links>

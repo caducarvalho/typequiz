@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import NextLink from 'next/link';
+import styled, { css } from 'styled-components';
 
 const Widget = styled.div`
   margin: 20px auto 0;
@@ -91,7 +92,7 @@ Widget.Links = styled.ul`
   }
 `;
 
-Widget.Link = styled.a`
+const LinkStyle = css`
   display: block;
   border-radius: 0;
   padding: 8px;
@@ -123,5 +124,9 @@ Widget.Link = styled.a`
     box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
   }
 `;
+
+Widget.Link = styled.a`${LinkStyle}`;
+
+// Widget.NextLink = styled(NextLink)`${LinkStyle}`;
 
 export default Widget;
